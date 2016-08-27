@@ -85,9 +85,6 @@ burns_agegrouping = burns_slice[['AGE','DIED']].dropna().sort('AGE').groupby('AG
 burns_agegrouping.head()
 burns_agegrouping.aggregate('count')
 burns_deathrates_proto = burns_agegrouping.aggregate([np.sum, 'count'])
-
 burns_deathrates_proto.to_csv("deathrates.csv")
-
-burns_slice[burns_slice['AGE'] > 100][['AGE','DIED']]
 
 
